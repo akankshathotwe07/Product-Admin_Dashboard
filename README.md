@@ -1,75 +1,61 @@
-# Product Admin Dashboard
+# 🛍️ Product Admin Dashboard
 
-A responsive Product Admin Dashboard built with Next.js, React, Tailwind CSS, Axios, and the DummyJSON API.
+<p align="center">
+  A modern and responsive product management dashboard built with <b>Next.js</b>, <b>React</b>, <b>Tailwind CSS</b> and <b>Axios</b>.
+</p>
 
-## Features
+<p align="center">
+  <a href="https://github.com/akankshathotwe07/Product-Admin_Dashboard">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" />
+  </a>
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/Axios-API_Client-5A29E4?style=for-the-badge" />
+</p>
 
-- User authentication with login and logout
-- Protected product management pages
-- Product listing with responsive desktop table and mobile cards
-- Product search with debounce
+---
+
+## ✨ Overview
+
+**Product Admin Dashboard** is a responsive web application for managing products through a clean and intuitive admin interface.
+
+The application includes authentication, product management, search, filtering, sorting, pagination and responsive layouts for desktop and mobile devices.
+
+---
+
+## 🚀 Features
+
+### 🔐 Authentication
+- Login using DummyJSON authentication
+- Protected product management routes
+- Logout functionality
+- Loading state during login
+- Invalid credential handling
+
+### 📦 Product Management
+- View products
+- View detailed product information
+- Add new products
+- Edit existing products
+- Delete products
+- Delete confirmation modal
+
+### 🔎 Search & Filters
+- Debounced product search
+- Search by product name
+- Search by category
 - Category filtering
-- Product sorting by:
-  - Price
-  - Rating
-  - Title
-- Pagination
-- Adjustable page size: 10, 20, 50
-- Product details page
-- Add new product
-- Edit product
-- Delete product with confirmation
-- Loading, error, empty and retry states
-- URL-based search, filter, sort and pagination
-- Responsive design
+- Price sorting
+- Rating sorting
+- Title sorting
 
-## Tech Stack
-
-- Next.js
-- React
-- JavaScript
-- Tailwind CSS
-- Axios
-- DummyJSON API
-- Git & GitHub
-
-## Project Structure
+### 📄 Pagination
+- Previous / Next navigation
+- Page numbers
+- 10 / 20 / 50 products per page
+- URL-based pagination
+- Pagination information such as:
 
 ```text
-product-admin-dashboard/
-│
-├── app/
-│   ├── login/
-│   │   └── page.jsx
-│   │
-│   ├── products/
-│   │   ├── page.jsx
-│   │   ├── new/
-│   │   │   └── page.jsx
-│   │   └── [id]/
-│   │       ├── page.jsx
-│   │       └── edit/
-│   │           └── page.jsx
-│   │
-│   └── page.js
-│
-├── components/
-│
-├── hooks/
-│   └── useDebounce.js
-│
-├── lib/
-│   ├── axios.js
-│   └── auth.js
-│
-├── services/
-│   ├── authService.js
-│   ├── productService.js
-│   └── categoryService.js
-│
-├── utils/
-│   └── productStorage.js
-│
-├── public/
-│
-└── README.md
+Showing 21–40 of 194
