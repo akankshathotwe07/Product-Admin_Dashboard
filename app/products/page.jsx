@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   getProducts,
@@ -11,7 +11,7 @@ import { getCategories } from "@/services/categoryService";
 import { useDebounce } from "@/hooks/useDebounce";
 import { isProductDeleted } from "@/utils/productStorage";
 
-export default function ProductsPage() {
+function ProductsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -452,21 +452,27 @@ export default function ProductsPage() {
             className="rounded-lg border border-gray-300 bg-white px-4 py-3 text-black"
           >
             <option value="">Sort By</option>
+
             <option value="price-asc">
               Price: Low to High
             </option>
+
             <option value="price-desc">
               Price: High to Low
             </option>
+
             <option value="rating-asc">
               Rating: Low to High
             </option>
+
             <option value="rating-desc">
               Rating: High to Low
             </option>
+
             <option value="title-asc">
               Title: A to Z
             </option>
+
             <option value="title-desc">
               Title: Z to A
             </option>
@@ -796,5 +802,22 @@ export default function ProductsPage() {
         </div>
       )}
     </main>
+  );
+}
+
+/* Required for Next.js useSearchParams build */
+export default function ProductsPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="flex min-h-screen items-center justify-center bg-gray-100">
+          <p className="text-lg font-medium text-black">
+            Loading products...
+          </p>
+        </main>
+      }
+    >
+      <ProductsPageContent />
+    </Suspense>
   );
 }
